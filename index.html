@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ФИО </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header id="header">
+        <h2> Генерация случайного ФИО </h2>
+    </header>
+
+    <main id="main">
+        <div id="page">
+            <div class="randomizer">
+                <h3> Генерация </h3>
+                <label> Фамилия: </label>
+                <textarea readonly> </textarea>
+                <label> Имя: </label>
+                <textarea readonly> </textarea>
+                <label> Отчество: </label>
+                <textarea readonly> </textarea> 
+                <div>
+                    <label for="male"> Муж: </label>
+                    <input type="radio" name="gender" id="male">
+                </div>
+                <div>
+                    <label for="male"> Жен: </label>
+                    <input type="radio" name="gender" id="female">
+                </div>
+                <button id="generate"> Сгенерировать </button>
+            </div>
+            <div class="new_data">
+                <h3> Добавить данные в базу </h3>
+
+                <label> Фамилия: </label>
+                <input type="text">
+                <div>
+                    <label for="male"> Муж: </label>
+                    <input type="radio" name="gender" id="male">
+                </div>
+                <div>
+                    <label for="male"> Жен: </label>
+                    <input type="radio" name="gender" id="female">
+                </div>
+                <button> Добавить </button>
+                
+                <label> Имя: </label>
+                <div>
+                    <label for="male"> Муж: </label>
+                    <input type="radio" name="gender" id="male">
+                </div>
+                <div>
+                    <label for="male"> Жен: </label>
+                    <input type="radio" name="gender" id="female">
+                </div>
+                <input type="text">
+                <button> Добавить </button>
+
+                <label> Отчество: </label>
+                <input type="text">
+                <div>
+                    <label for="male"> Муж: </label>
+                    <input type="radio" name="gender" id="male">
+                </div>
+                <div>
+                    <label for="male"> Жен: </label>
+                    <input type="radio" name="gender" id="female">
+                </div>
+                <button> Добавить </button>
+            </div>
+            <div class="your_data"></div>
+        </div>
+    </main>
+</body>
+</html>
