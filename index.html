@@ -36,42 +36,44 @@
                 <h3> Добавить данные в базу </h3>
 
                 <label> Фамилия: </label>
-                <input type="text">
+                <input type="text" id="sur_text">
                 <div>
                     <label for="male"> Муж: </label>
-                    <input type="radio" name="gender" id="male">
+                    <input type="radio" name="sur_gender" id="sur_male">
                 </div>
                 <div>
                     <label for="male"> Жен: </label>
-                    <input type="radio" name="gender" id="female">
+                    <input type="radio" name="sur_gender" id="sur_female">
                 </div>
-                <button> Добавить </button>
+                <button id="sur_add"> Добавить </button>
                 
                 <label> Имя: </label>
+                <input type="text" id="name_text">
                 <div>
                     <label for="male"> Муж: </label>
-                    <input type="radio" name="gender" id="male">
+                    <input type="radio" name="name_gender" id="name_male">
                 </div>
                 <div>
                     <label for="male"> Жен: </label>
-                    <input type="radio" name="gender" id="female">
+                    <input type="radio" name="name_gender" id="name_female">
                 </div>
-                <input type="text">
-                <button> Добавить </button>
+                <button id="name_add"> Добавить </button>
 
                 <label> Отчество: </label>
                 <input type="text">
                 <div>
                     <label for="male"> Муж: </label>
-                    <input type="radio" name="gender" id="male">
+                    <input type="radio" name="sec_gender" id="sec_male">
                 </div>
                 <div>
                     <label for="male"> Жен: </label>
-                    <input type="radio" name="gender" id="female">
+                    <input type="radio" name="sec_gender" id="sec_female">
                 </div>
-                <button> Добавить </button>
+                <button id="sec_add"> Добавить </button>
             </div>
-            <div class="your_data"></div>
+            <div class="your_data">
+                <h3> Добавленные вами данные </h3>
+            </div>
         </div>
     </main>
 </body>
