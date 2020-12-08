@@ -1,3 +1,6 @@
+let host;
+let port;
+
 class Person {
     constructor (surname, name, secondName) {
         this.surname = surname;
@@ -41,7 +44,8 @@ const getPerson = () => {
                 return;
             }
     
-    fetch('http://localhost:8080/random/' + gender, {
+    const api = 'http://' + host + ':' + port + '/random/' + gender;
+    fetch(api, {
         method: 'get',
         headers: {
             'Access-Control-Allow-Origin': '*'
@@ -51,8 +55,9 @@ const getPerson = () => {
     .then(json => renderPerson(new Person(json['name'], json['surname'], json['second_name'])))
 }
 
-const renderData = () => {
-
+const renderData = (data) => {
+    const dataContainer = document.getElementById('data');
+    dataContainer.innerHTML += data + '<br>';
 }
 
 getBooleanGender = (radioMale, radioFemale) => {
@@ -66,7 +71,8 @@ getBooleanGender = (radioMale, radioFemale) => {
 }
 
 const addUnit = (unit, unit_type) => {
-    fetch('http://localhost:8080/new/' + unit_type, {
+    const api = 'http://' + host + ':' + port + '/new/' + unit_type;
+    fetch(api, {
         method: 'post',
         headers: {
             'Access-Control-Allow-Origin': '*',
@@ -74,6 +80,8 @@ const addUnit = (unit, unit_type) => {
         },
         body: JSON.stringify(unit.serialize())
     })
+    .then(response => response.json())
+    .then(json => renderData(json['data']))
 }
         
 const addSurname = () => {
@@ -116,15 +124,23 @@ const addSecondName = () => {
 }
 
 window.addEventListener('load', () => {
-    const generateButton = document.getElementById('generate');
-    generateButton.addEventListener('click', () => getPerson());
-    
-    const addSurnameButton = document.getElementById('sur_add');
-    addSurnameButton.addEventListener('click', () => addSurname());
+    fetch('config.json')
+    .then(data => data.json())
+    .then(config => {
+        host = config['host'];
+        port = config['port'];
+    })
+    .then(() => {
+        const generateButton = document.getElementById('generate');
+        generateButton.addEventListener('click', () => getPerson());
+        
+        const addSurnameButton = document.getElementById('sur_add');
+        addSurnameButton.addEventListener('click', () => addSurname());
 
-    const addNameButton = document.getElementById('name_add');
-    addNameButton.addEventListener('click', () => addName());
+        const addNameButton = document.getElementById('name_add');
+        addNameButton.addEventListener('click', () => addName());
 
-    const addSecondNameButton = document.getElementById('sec_add');
-    addSecondNameButton.addEventListener('click', () => addSecondName());
+        const addSecondNameButton = document.getElementById('sec_add');
+        addSecondNameButton.addEventListener('click', () => addSecondName());
+    })
 });

@@ -35,44 +35,57 @@
             <div class="new_data">
                 <h3> Добавить данные в базу </h3>
 
-                <label> Фамилия: </label>
-                <input type="text" id="sur_text">
-                <div>
-                    <label for="male"> Муж: </label>
-                    <input type="radio" name="sur_gender" id="sur_male">
+                <div class="wrapper">
+                    <label> Фамилия: </label>
+                    <input type="text" id="sur_text">
+                    <div class="radio">
+                        <div>
+                            <label for="male"> Муж: </label>
+                            <input type="radio" name="sur_gender" id="sur_male">
+                        </div>
+                        <div>
+                            <label for="male"> Жен: </label>
+                            <input type="radio" name="sur_gender" id="sur_female">
+                        </div>
+                    </div>
+                    <button id="sur_add"> Добавить </button>
                 </div>
-                <div>
-                    <label for="male"> Жен: </label>
-                    <input type="radio" name="sur_gender" id="sur_female">
-                </div>
-                <button id="sur_add"> Добавить </button>
                 
-                <label> Имя: </label>
-                <input type="text" id="name_text">
-                <div>
-                    <label for="male"> Муж: </label>
-                    <input type="radio" name="name_gender" id="name_male">
+                <div class="wrapper">
+                    <label> Имя: </label>
+                    <input type="text" id="name_text">
+                    <div class="radio">
+                        <div>
+                            <label for="male"> Муж: </label>
+                            <input type="radio" name="name_gender" id="name_male">
+                        </div>
+                        <div>
+                            <label for="male"> Жен: </label>
+                            <input type="radio" name="name_gender" id="name_female">
+                        </div>
+                    </div>
+                    <button id="name_add"> Добавить </button>
                 </div>
-                <div>
-                    <label for="male"> Жен: </label>
-                    <input type="radio" name="name_gender" id="name_female">
-                </div>
-                <button id="name_add"> Добавить </button>
 
-                <label> Отчество: </label>
-                <input type="text">
-                <div>
-                    <label for="male"> Муж: </label>
-                    <input type="radio" name="sec_gender" id="sec_male">
+                <div class="wrapper">
+                    <label> Отчество: </label>
+                    <input type="text" id="sec_text">
+                    <div class="radio">
+                        <div>
+                            <label for="male"> Муж: </label>
+                            <input type="radio" name="sec_gender" id="sec_male">
+                        </div>
+                        <div>
+                            <label for="male"> Жен: </label>
+                            <input type="radio" name="sec_gender" id="sec_female">
+                        </div>
+                    </div>
+                    <button id="sec_add"> Добавить </button>
                 </div>
-                <div>
-                    <label for="male"> Жен: </label>
-                    <input type="radio" name="sec_gender" id="sec_female">
-                </div>
-                <button id="sec_add"> Добавить </button>
             </div>
             <div class="your_data">
                 <h3> Добавленные вами данные </h3>
+                <p id="data"></p>
             </div>
         </div>
     </main>
